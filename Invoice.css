@@ -1,12 +1,134 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
+.invoice-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.details-table th, .details-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.details-table th {
+  background-color: #f4f4f4;
+}
+
+.banking-details p, .signature {
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.signature {
+  margin-top: 20px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.invoice-header h2 {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.invoice-header h3 {
+  margin: 0;
+  position: absolute;
+  right: 0;
+  padding: 0px;
+}
+
+/* Print Button Styling */
+.print-btn {
+  display: inline-block;
+  position: absolute;
+  padding: 10px 20px;
+  margin-top: 20px;
+  top: 20px;
+  right: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.print-btn:hover {
+  background-color: #45a049;
+}
+
+/* Print-specific Styles */
+@media print {
+  /* Hide the print button when printing */
+  .print-btn {
+    display: none;
   }
 
-  table, th, td {
-    border: 1px solid black;
+  /* Remove the body background and padding for print */
+  body {
+    padding: 0;
+    background-color: white;
+  }
+
+  /* Adjust invoice container to fit on paper */
+  .invoice-container {
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  /* Make sure tables and text remain clean */
+  .details-table th, .details-table td {
     padding: 8px;
-    text-align: left;
   }
 
+  .signature {
+    text-align: right;
+    margin-top: 40px;
+  }
+}

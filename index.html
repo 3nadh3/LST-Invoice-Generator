@@ -8,192 +8,104 @@
 </head>
 <body>
   <div class="invoice-container">
-    <form action="GenerateInvoice.php" method="post" onsubmit="SubmitForm()">
-    <div class="section">
-      <div class="section-header">INVOICE</div>
-      <div>
-        <strong>Date:</strong>
-        <input
-          type="date"
-          placeholder="Enter Date"
-          id="dateInput"
-          value="2024-01-01"
-        >
+    <form  action="GenerateInvoice.php" method="post"  >
+      <div class="section">
+        <div class="section-header">INVOICE</div>
+        <div>
+          <strong>Date:</strong>
+          <input type="date" name="date" id="dateInput" required>
+        </div>
       </div>
-    </div>
-
-    <div class="section">
-      <div class="section-header">COMPANY</div>
-      <div>
-        <strong>NAME:</strong>
-        <input
-          type="text"
-          placeholder="Enter Company Name"
-          id="companyNameInput"
-          value="LIGHTNING SPEED TRANSPORTATION"
-        >
+  
+      <div class="section">
+        <div class="section-header">COMPANY</div>
+        <div>
+          <strong>NAME:</strong>
+          <input type="text" name="companyName" id="companyNameInput" value="LIGHTNING SPEED TRANSPORTATION" required>
+        </div>
+        <div>
+          <strong>ADDRESS:</strong>
+          <textarea name="companyAddress" id="companyAddressInput" required>D.NO 28-5-2, SANTHINAGAR 14TH LANE BESIDE UNION BANK ATM ELURU-534007, ANDHRA PRADESH</textarea>
+        </div>
+        <div>
+          <strong>PHONE NUMBER:</strong>
+          <input type="text" name="companyPhone" id="companyPhoneInput" value="7286023136" required>
+        </div>
+        <div>
+          <strong>EMAIL:</strong>
+          <input type="email" name="companyEmail" id="companyEmailInput" value="anandnaidu231@gmail.com" required>
+        </div>
       </div>
-      <div>
-        <strong>ADDRESS:</strong>
-        <textarea
-          placeholder="Enter Company Address"
-          id="companyAddressInput"
-        >D.NO 28-5-2, SANTHINAGAR 14TH LANE\nBESIDE UNION BANK ATM\nELURU-534007, ANDHRA PRADESH</textarea>
+  
+      <div class="section">
+        <div class="section-header">BANKING DETAILS</div>
+        <div>
+          <strong>NAME:</strong>
+          <input type="text" name="bankingCompanyName" id="bankingCompanyNameInput" value="LIGHTNING SPEED TRANSPORTATION" required>
+        </div>
+        <div>
+          <strong>BANK NAME:</strong>
+          <input type="text" name="bankName" id="bankNameInput" value="KANAKAMAHALKSHMI CO-OPERATIVE BANK" required>
+        </div>
+        <div>
+          <strong>ACCOUNT NUMBER:</strong>
+          <input type="number" name="accountNumber" id="accountNumberInput" value="1007014000264" required>
+        </div>
+        <div>
+          <strong>IFC CODE:</strong>
+          <input type="text" name="ifcCode" id="ifcCodeInput" value="IBKL0150KMC" required>
+        </div>
       </div>
-      <div>
-        <strong>PHONE NUMBER:</strong>
-        <input
-          type="text"
-          placeholder="Enter Company Phone Number"
-          id="companyPhoneInput"
-          value="7286023136"
-        >
+  
+      <div class="section">
+        <div class="section-header">BILL TO</div>
+        <div>
+          <strong>NAME:</strong>
+          <input type="text" name="billToName" id="billToNameInput" required>
+        </div>
+        <div>
+          <strong>ADDRESS:</strong>
+          <textarea name="billToAddress" id="billToAddressInput" required></textarea>
+        </div>
+        <div>
+          <strong>PHONE NUMBER:</strong>
+          <input type="tel" name="billToPhone" id="billToPhoneInput" required>
+        </div>
       </div>
-      <div>
-        <strong>EMAIL:</strong>
-        <input
-          type="text"
-          placeholder="Enter Company Email"
-          id="companyEmailInput"
-          value="anandnaidu231@gmail.com"
-        >
+  
+      <div class="section">
+        <div class="section-header">SHIPMENT DETAILS</div>
+        <div>
+          <strong>AWB NUMBER:</strong>
+          <input type="number" name="awbNumber" id="awbNumberInput" required>
+        </div>
+        <div>
+          <strong>ORIGIN:</strong>
+          <input type="text" name="origin" id="originInput" required>
+        </div>
+        <div>
+          <strong>DESTINATION:</strong>
+          <input type="text" name="destination" id="destinationInput" required>
+        </div>
+        <div>
+          <strong>PIECES:</strong>
+          <input type="number" name="pieces" id="piecesInput" required>
+        </div>
+        <div>
+          <strong>SHIPMENT WEIGHT:</strong>
+          <input type="number" name="shipmentWeight" id="shipmentWeightInput" required>
+        </div>
+        <div>
+          <strong>PRICE:</strong>
+          <input type="number" name="price" id="priceInput" required>
+        </div>
       </div>
-    </div>
-
-    <div class="section">
-      <div class="section-header">BANKING DETAILS</div>
-      <div>
-        <strong>NAME:</strong>
-        <input
-          type="text"
-          placeholder="Enter Company Name for Banking"
-          id="bankingCompanyNameInput"
-          value="LIGHTNING SPEED TRANSPORTATION"
-        >
-      </div>
-      <div>
-        <strong>BANK NAME:</strong>
-        <input
-          type="text"
-          placeholder="Enter Bank Name"
-          id="bankNameInput"
-          value="KANAKAMAHALKSHMI CO-OPERATIVE BANK"
-        >
-      </div>
-      <div>
-        <strong>ACCOUNT NUMBER:</strong>
-        <input
-          type="number"
-          placeholder="Enter Account Number"
-          id="accountNumberInput"
-          value="1007014000264"
-        >
-      </div>
-      <div>
-        <strong>IFC CODE:</strong>
-        <input
-          type="text"
-          placeholder="Enter IFC Code"
-          id="ifcCodeInput"
-          value="IBKL0150KMC"
-        >
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-header">BILL TO</div>
-      <div>
-        <strong>NAME:</strong>
-        <input
-          type="text"
-          placeholder="Enter Bill To Name"
-          id="billToNameInput"
-          value=""
-        >
-      </div>
-      <div>
-        <strong>ADDRESS:</strong>
-        <textarea
-          placeholder="Enter Bill To Address"
-          id="billToAddressInput"
-        ></textarea>
-      </div>
-      <div>
-        <strong>PHONE NUMBER:</strong>
-        <input
-          type="number"
-          placeholder="Enter Bill To Phone Number"
-          id="billToPhoneInput"
-          value=""
-        >
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-header">SHIPMENT DETAILS</div>
-      <div>
-        <strong>AWB NUMBER:</strong>
-        <input
-          type="number"
-          placeholder="Enter AWB Number"
-          id="awbNumberInput"
-          value=""
-        >
-      </div>
-      <div>
-        <strong>ORIGIN:</strong>
-        <input
-          type="text"
-          placeholder="Enter Shipment Origin"
-          id="originInput"
-          value=""
-        >
-      </div>
-      <div>
-        <strong>DESTINATION:</strong>
-        <input
-          type="text"
-          placeholder="Enter Shipment Destination"
-          id="destinationInput"
-          value=""
-        >
-      </div>
-      <div>
-        <strong>PIECES:</strong>
-        <input
-          type="number"
-          placeholder="Enter Shipment Pieces"
-          id="piecesInput"
-          value=""
-        >
-      </div>
-      <div>
-        <strong>SHIPMENT WEIGHT:</strong>
-        <input
-          type="number"
-          placeholder="Enter Shipment Weight"
-          id="shipmentWeightInput"
-          value=""
-        >
-      </div>
-      <div>
-        <strong>PRICE:</strong>
-        <input
-          type="number"
-          placeholder="Enter Shipment Price"
-          id="priceInput"
-          value=""
-        >
-      </div>
-    </div>
-
-    <!-- Add the Generate PDF button here -->
-    <button type="submit">Generate PDF</button>
-
-</form>
-
+  
+      <!-- Add the Generate PDF button here -->
+      <button type="submit">Generate PDF</button>
+    </form>
   </div>
-
+  
   <script src="Form.js"></script>
 </body>
 </html>
