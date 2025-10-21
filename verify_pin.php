@@ -2,7 +2,7 @@
 session_start();
 
 // ✅ Replace with your own secure hash (use generate_hash.php below)
-$stored_hash = '$2y$10$kyZaSar9m4EzpaCVa3SKQeCo0c1h0s85Uma8y7qzCwkwStoi4568u'; 
+$stored_hash = '$2y$10$koC8OAsYyS6bqf5BJLEjEumkWa4YnUOVEni4bR753hHuq8MxM9/7m'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $entered_pin = $_POST['pin'];
