@@ -1,0 +1,19 @@
+<?php
+session_start();
+
+// ✅ Replace with your own secure hash (use generate_hash.php below)
+$stored_hash = '$2y$10$zJ8gohAPu4j9PUrNJsPCbusbj8nCpvEFAwJ1udXa2c9QPs5f8b.0y'; 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $entered_pin = $_POST['pin'];
+
+    if (password_verify($entered_pin, $stored_hash)) {
+        $_SESSION['authenticated'] = true;
+        header("Location: index.php");
+        exit;
+    } else {
+        echo "<script>alert('Invalid PIN. Try again.'); window.location.href='pin.php';</script>";
+        exit;
+    }
+}
+?>

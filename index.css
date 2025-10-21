@@ -1,47 +1,94 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+.invoice-container {
+  max-width: 650px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.section-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+@media (max-width: 600px) {
   .invoice-container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 15px;
   }
-  
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  .section-header {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    box-sizing: border-box;
-  }
-  
+
   button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
   }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
+}
+
+.logout-container {
+  position: fixed;
+  top: 5px;       /* distance from top */
+  right: 5px;     /* distance from right */
+  z-index: 1000;  /* stay on top */
+}
+
+.logout-btn {
+  padding: 2px 5px;      /* very small padding */
+  font-size: 9px;        /* tiny text */
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
