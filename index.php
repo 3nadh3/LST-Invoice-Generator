@@ -1,15 +1,21 @@
 <?php
 session_start();
 
-$userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+$user_agent = $_SERVER['HTTP_USER_AGENT'] ?? '';
 
-// Allow Googlebot to access, others need login
-if (stripos($userAgent, 'Googlebot') === false) {
-    if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
-        header("Location: pin.php");
-        exit();
-    }
+if (stripos($user_agent, 'Googlebot') !== false) {
+    // Serve static homepage content for Googlebot
+    echo "<!DOCTYPE html><html><head><title>LST Invoice Generator</title></head><body>
+          <h1>Welcome to LST Invoice Generator</h1>
+          <p>This is an invoicing system built by Trinadh Musunuri.</p>
+          <p>Visit <a href='https://trinadh.dev'>Trinadh's Portfolio</a> for more.</p>
+          </body></html>";
+    exit;
 }
+
+// For normal users, proceed as usual (redirect)
+header("Location: pin.php");
+exit;
 
 // Session timeout (5 minutes)
 $timeout = 300; // seconds
