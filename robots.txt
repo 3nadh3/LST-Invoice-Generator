@@ -1,0 +1,18 @@
+# Allow all search engines to index the main invoice generator
+User-agent: *
+Allow: /
+
+# But block sensitive backend files or folders
+Disallow: /pin.php
+Disallow: /logout.php
+Disallow: /GenerateInvoice.php
+Disallow: /config.php
+Disallow: /verify_pin.php
+Disallow: /generate_hash.php
+Disallow: /info.php
+
+# Sitemap for faster indexing
+Sitemap: https://lstinvoice.trinadh.dev/sitemap.xml
+
+# Developer info
+# Created by Trinadh Musunuri - https://trinadh.dev
